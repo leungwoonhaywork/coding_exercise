@@ -40,7 +40,11 @@ public class Loader {
             displayManager.printResult(showData, categories, category);
         }
         else if (num == 4 || num == 5) {
-            displayManager.printResult(showData, categories, 0);
+            displayManager.printYearQuestion();
+            String year = scanner.nextLine();
+            boolean isVaildYear = checkIsInteger(year);
+            handleInvalidInt(isVaildYear);
+            displayManager.printResult(showData, categories, Integer.parseInt(year));
         }
         else if (num == 2){
             displayManager.printResult(showData, categories);

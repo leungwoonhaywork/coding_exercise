@@ -42,8 +42,11 @@ public class DisplayManager {
         System.out.println(showData.showResult(categoryDTO));
     }
 
-
     public static void printCategoryQuestion() {
         System.out.println("Which category do you want to search for?");
+    }
+
+    public static void printYearQuestion() {
+        System.out.println("Which year do you want to search for?");
     }
 }

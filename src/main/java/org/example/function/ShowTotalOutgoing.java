@@ -53,7 +53,7 @@ public class ShowTotalOutgoing extends ShowData{
             categories.add(new CategoryOutgoing(categoryDTO.get(i).getCategory(), categoryDTO.get(i).getAmount()));
         }
         for(int i = 1; i < categories.size(); i ++) {
-            for (int j = i - 1; j > 0; j --) {
+            for (int j = i - 1; j >= 0; j --) {
                 if (categories.get(i).getCategory().equals(categories.get(j).getCategory())) {
                     categories.get(j).setAmount(categories.get(j).getAmount() + categories.get(i).getAmount());
                     categories.remove(i);
