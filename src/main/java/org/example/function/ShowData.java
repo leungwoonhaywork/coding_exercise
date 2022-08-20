@@ -13,6 +13,10 @@ public abstract class ShowData {
         return null;
     }
 
+    public String getName(String category, int year) {
+        return null;
+    }
+
     public String showResult(List<CategoryDTO> categoryDTO) {
         return null;
     };
@@ -21,7 +25,7 @@ public abstract class ShowData {
         return null;
     };
 
-    public String showResult(List<CategoryDTO> categoryDTO, int year) {
+    public String showResult(List<CategoryDTO> categoryDTO, String category, int year) {
         return null;
     };
 }

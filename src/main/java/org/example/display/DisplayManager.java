@@ -37,9 +37,9 @@ public class DisplayManager {
         System.out.println(showData.showResult(categoryDTO, category));
     }
 
-    public static void printResult(ShowData showData, List<CategoryDTO> categoryDTO, int year) {
-        System.out.println("Showing the result of " + showData.getName());
-        System.out.println(showData.showResult(categoryDTO));
+    public static void printResult(ShowData showData, List<CategoryDTO> categoryDTO, String category, int year) {
+        System.out.println("Showing the result of " + showData.getName(category, year));
+        System.out.println(showData.showResult(categoryDTO, category, year));
     }
 
     public static void printCategoryQuestion() {
