@@ -6,15 +6,14 @@ import org.example.category.CategoryOutgoing;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShowTotalOutgoing implements ShowData{
+public class ShowTotalOutgoing extends ShowData{
     @Override
     public String getName() {
         return "total outgoing per category";
     }
 
-    @Override
     public String showResult(List<CategoryDTO> categoryDTO) {
-        List<CategoryOutgoing> categories = addCategoryOutgoing(categoryDTO);
+        List<CategoryOutgoing> categories = addCategoryOutgoing2(categoryDTO);
         String result = "     Category    | Amount\n";
         for (int i = 0; i < categories.size(); i ++) {
             result += 1 + i + ". | " + categories.get(i).getCategory();
@@ -43,6 +42,23 @@ public class ShowTotalOutgoing implements ShowData{
             }
             else{
                 categories.add(new CategoryOutgoing(categoryDTO.get(i).getCategory(), categoryDTO.get(i).getAmount()));
+            }
+        }
+        return categories;
+    }
+
+    public List<CategoryOutgoing> addCategoryOutgoing2(List<CategoryDTO> categoryDTO) {
+        List<CategoryOutgoing> categories = new ArrayList<>();
+        for (int i = 0; i < categoryDTO.size(); i ++) {
+            categories.add(new CategoryOutgoing(categoryDTO.get(i).getCategory(), categoryDTO.get(i).getAmount()));
+        }
+        for(int i = 1; i < categories.size(); i ++) {
+            for (int j = i - 1; j > 0; j --) {
+                if (categories.get(i).getCategory().equals(categories.get(j).getCategory())) {
+                    categories.get(j).setAmount(categories.get(j).getAmount() + categories.get(i).getAmount());
+                    categories.remove(i);
+                    i --;
+                }
             }
         }
         return categories;

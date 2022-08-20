@@ -4,8 +4,24 @@ import org.example.category.CategoryDTO;
 
 import java.util.List;
 
-public interface ShowData {
-    abstract String getName();
+public abstract class ShowData {
+    public String getName() {
+        return null;
+    };
 
-    public abstract String showResult(List<CategoryDTO> categoryDTO);
+    public String getName(String category) {
+        return null;
+    }
+
+    public String showResult(List<CategoryDTO> categoryDTO) {
+        return null;
+    };
+
+    public String showResult(List<CategoryDTO> categoryDTO, String category) {
+        return null;
+    };
+
+    public String showResult(List<CategoryDTO> categoryDTO, int year) {
+        return null;
+    };
 }

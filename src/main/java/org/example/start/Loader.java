@@ -2,6 +2,7 @@ package org.example.start;
 
 import org.example.category.CategoryDTO;
 import org.example.display.DisplayManager;
+import org.example.function.ShowAllTransactions;
 import org.example.function.ShowData;
 
 import java.time.LocalDate;
@@ -32,9 +33,19 @@ public class Loader {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        //CategoryDTO categoryDTO = new CategoryDTO(addDate("01/11/2020"), "Morrisons", "card", 10.4f, "Groceries");
         List<CategoryDTO> categories = addCategory();
-        displayManager.printResult(showData, categories);
+        if (num == 1 || num == 3) {
+            displayManager.printCategoryQuestion();
+            String category = scanner.nextLine();
+            displayManager.printResult(showData, categories, category);
+        }
+        else if (num == 4 || num == 5) {
+            displayManager.printResult(showData, categories, 0);
+        }
+        else if (num == 2){
+            displayManager.printResult(showData, categories);
+        }
+
     }
 
     public static boolean checkIsInteger(String input) {
