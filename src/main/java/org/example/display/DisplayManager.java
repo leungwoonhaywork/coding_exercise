@@ -31,4 +31,19 @@ public class DisplayManager {
         System.out.println("Showing the result of " + showData.getName());
         System.out.println(showData.showResult(categoryDTO));
     }
+
+    public static void printResult(ShowData showData, List<CategoryDTO> categoryDTO, String category) {
+        System.out.println("Showing the result of " + showData.getName(category));
+        System.out.println(showData.showResult(categoryDTO, category));
+    }
+
+    public static void printResult(ShowData showData, List<CategoryDTO> categoryDTO, int year) {
+        System.out.println("Showing the result of " + showData.getName());
+        System.out.println(showData.showResult(categoryDTO));
+    }
+
+
+    public static void printCategoryQuestion() {
+        System.out.println("Which category do you want to search for?");
+    }
 }
