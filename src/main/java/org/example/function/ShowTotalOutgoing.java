@@ -20,7 +20,7 @@ public class ShowTotalOutgoing extends ShowData{
             for (int j = 0; j < 12 - categories.get(i).getCategory().length(); j ++) {
                 result += " ";
             }
-            result += "| " + categories.get(i).getAmount();
+            result += "| £" + categories.get(i).getAmount();
             result += "\n";
         }
         return result;

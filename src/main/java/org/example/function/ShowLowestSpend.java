@@ -22,7 +22,7 @@ public class ShowLowestSpend extends ShowData{
             result += "Record not found";
         }
         else {
-            result = String.valueOf(findMin(categories));
+            result = "£" + findMin(categories);
         }
         return result;
     }
