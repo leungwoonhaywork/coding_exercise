@@ -51,7 +51,11 @@ public class Loader {
         else if (num == 2){
             displayManager.printResult(showData, categories);
         }
-
+        System.out.println("Do you want to continue? (y/n)");
+        String yn = scanner.nextLine();
+        if (yn.equalsIgnoreCase("y")) {
+            start();
+        }
     }
 
     public static boolean checkIsInteger(String input) {
