@@ -24,7 +24,7 @@ public class ShowHighestSpend extends ShowData{
             result += "Record not found";
         }
         else {
-            result = String.valueOf(findMax(categories));
+            result = "£" + findMax(categories);
         }
         return result;
     }

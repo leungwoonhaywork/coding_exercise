@@ -26,7 +26,7 @@ public class ShowMonthlyAverage extends ShowData{
                 for (int j = 0; j < 2 - String.valueOf(categories.get(i).getMonth()).length(); j ++) {
                     result += " ";
                 }
-                result += "          | " + categories.get(i).getAmount() /  categories.get(i).getCount() + "\n";
+                result += "          | £" + categories.get(i).getAmount() /  categories.get(i).getCount() + "\n";
             }
         }
         return result;

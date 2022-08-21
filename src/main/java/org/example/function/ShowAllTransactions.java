@@ -27,7 +27,7 @@ public class ShowAllTransactions extends ShowData {
                 for (int j = 0; j < 12 - latestFirst.get(i).getType().length(); j ++) {
                     result += " ";
                 }
-                result += " | " + latestFirst.get(i).getAmount();
+                result += " | £" + latestFirst.get(i).getAmount();
                 for (int j = 0; j < 6 - String.valueOf(latestFirst.get(i).getAmount()).length(); j ++) {
                     result += " ";
                 }
